@@ -3,14 +3,21 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Jovan_Gjavochanov_6170.iml" filepath="$PROJECT_DIR$/.idea/Jovan_Gjavochanov_6170.iml" />
-      <module fileurl="file://$PROJECT_DIR$/First Commit/Lecture1.iml" filepath="$PROJECT_DIR$/First Commit/Lecture1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lecture1/Lecture1.iml" filepath="$PROJECT_DIR$/Lecture1/Lecture1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lecture2/Lecture2.iml" filepath="$PROJECT_DIR$/Lecture2/Lecture2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lecture3/Lecture3.iml" filepath="$PROJECT_DIR$/Lecture3/Lecture3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lecture2/exercise1/exercise1.iml" filepath="$PROJECT_DIR$/Lecture2/exercise1/exercise1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lecture3/exercise1L3/exercise1L3.iml" filepath="$PROJECT_DIR$/Lecture3/exercise1L3/exercise1L3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lecture2/exercise2/exercise2.iml" filepath="$PROJECT_DIR$/Lecture2/exercise2/exercise2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lecture3/exercise2L3/exercise2L3.iml" filepath="$PROJECT_DIR$/Lecture3/exercise2L3/exercise2L3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lecture2/exercise3/exercise3.iml" filepath="$PROJECT_DIR$/Lecture2/exercise3/exercise3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lecture3/exercise3L3/exercise3L3.iml" filepath="$PROJECT_DIR$/Lecture3/exercise3L3/exercise3L3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lecture2/exercise4/exercise4.iml" filepath="$PROJECT_DIR$/Lecture2/exercise4/exercise4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lecture3/exercise4L3/exercise4L3.iml" filepath="$PROJECT_DIR$/Lecture3/exercise4L3/exercise4L3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lecture2/exercise5/exercise5.iml" filepath="$PROJECT_DIR$/Lecture2/exercise5/exercise5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lecture3/exercise5L3/exercise5L3.iml" filepath="$PROJECT_DIR$/Lecture3/exercise5L3/exercise5L3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lecture2/exercise6/exercise6.iml" filepath="$PROJECT_DIR$/Lecture2/exercise6/exercise6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lecture3/exercise6L3/exercise6L3.iml" filepath="$PROJECT_DIR$/Lecture3/exercise6L3/exercise6L3.iml" />
     </modules>
   </component>
 </project>
