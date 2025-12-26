@@ -1,0 +1,35 @@
+package ass1;
+
+public class AdventureBook extends Book {
+    private int publishYear;
+    private boolean childrenBook;
+
+    public AdventureBook() {}
+
+    public AdventureBook(String title, String author, double price, String language,
+                         int publishYear, boolean childrenBook) {
+        super(title, author, price, language);
+        this.publishYear = publishYear;
+        this.childrenBook = childrenBook;
+    }
+
+    @Override
+    public void printAttributes() {
+        System.out.println("Adventure Book:");
+        System.out.println(" Title: " + title);
+        System.out.println(" Author: " + author);
+        System.out.println(" Price: " + price);
+        System.out.println(" Language: " + language);
+        System.out.println(" Publish Year: " + publishYear);
+        System.out.println(" Children Book: " + childrenBook);
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    public int getPublishYear() {
+        return publishYear;
+    }
+}
