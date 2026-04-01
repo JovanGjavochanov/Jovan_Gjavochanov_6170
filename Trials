@@ -1,0 +1,121 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+import java.nio.file.AccessDeniedException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
+public class FileDup {
+
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            System.out.println("Please provide a command: copy, readurl, or find");
+            return;
+        }
+
+        String command = args[0];
+
+        switch (command) {
+            case "copy":
+                if (args.length < 3) {
+                    System.out.println("Usage: java FileDup copy <source> <destination>");
+                } else {
+                    copyFile(args[1], args[2]);
+                }
+                break;
+            case "readurl":
+                if (args.length < 2) {
+                    System.out.println("Usage: java FileDup readurl <url>");
+                } else {
+                    readUrl(args[1]);
+                }
+                break;
+            case "find":
+                if (args.length < 3) {
+                    System.out.println("Usage: java FileDup find <directory> <pattern>");
+                } else {
+                    findFiles(args[1], args[2]);
+                }
+                break;
+            default:
+                System.out.println("Unknown command: " + command);
+        }
+    }
+
+    private static void copyFile(String source, String destination) {
+        Path srcPath = Paths.get(source);
+        Path destPath = Paths.get(destination);
+
+        try {
+            // Display progress message
+            System.out.println("Starting copy process...");
+            
+            // Use java.nio.file.Files.copy() as required
+            Files.copy(srcPath, destPath, StandardCopyOption.REPLACE_EXISTING);
+            
+            long size = Files.size(destPath);
+            System.out.printf("Copied %s to %s (%,d bytes)%n", source, destination, size);
+            
+        } catch (NoSuchFileException e) {
+            System.err.println("Error: Source file not found.");
+        } catch (AccessDeniedException e) {
+            System.err.println("Error: Permission denied.");
+        } catch (IOException e) {
+            System.err.println("Error during file copy: " + e.getMessage());
+        }
+    }
+
+    private static void readUrl(String urlString) {
+        System.out.println("Fetching " + urlString + "...");
+        try {
+            // Convert to URL
+            URL url = URI.create(urlString).toURL();
+            
+            // Use BufferedReader as required
+            try (BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()))) {
+                String inputLine;
+                int lineCount = 0;
+                
+                // Limit to first 10 lines
+                while ((inputLine = in.readLine()) != null && lineCount < 10) {
+                    System.out.println(inputLine);
+                    lineCount++;
+                }
+                System.out.println("(Fetched " + lineCount + " lines)");
+                
+            } catch (IOException e) {
+                System.err.println("Error: Connection failure. " + e.getMessage());
+            }
+        } catch (MalformedURLException | IllegalArgumentException e) {
+            System.err.println("Error: Invalid URL.");
+        }
+    }
+
+    private static void findFiles(String dirPath, String pattern) {
+        File directory = new File(dirPath);
+
+        if (!directory.exists() || !directory.isDirectory()) {
+            System.err.println("Error: Directory not found or invalid.");
+            return;
+        }
+
+        // List files containing the pattern in their name
+        File[] matchingFiles = directory.listFiles((dir, name) -> name.contains(pattern));
+
+        if (matchingFiles != null) {
+            System.out.printf("Found %d matching files:%n", matchingFiles.length);
+            for (File file : matchingFiles) {
+                System.out.println(file.getName());
+            }
+        } else {
+            System.err.println("Error: Could not read directory contents (Permission denied).");
+        }
+    }
+}
